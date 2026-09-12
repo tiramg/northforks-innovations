@@ -10,6 +10,62 @@
 body{font-family:Arial,Helvetica,sans-serif;background:#fff}.site-header{background:#fff}.header-row{min-height:64px}.shell{width:min(1320px,calc(100% - 48px))}.brand{font-size:1.05rem;letter-spacing:-.02em}.brand img{width:86px}.nav{gap:38px}.nav a{font-size:.82rem}.tag{font-size:.62rem}.hero{min-height:408px;grid-template-columns:.95fr 1.05fr}.hero-copy{padding-top:44px;padding-bottom:40px}.eyebrow{font-size:.64rem;letter-spacing:.28em;margin-bottom:20px}h1{font-family:Arial,Helvetica,sans-serif;font-size:clamp(3rem,4.7vw,4.7rem);line-height:.98;font-weight:850}.lede{font-size:1.08rem;line-height:1.45;margin-bottom:20px}.hero-signoff{margin:0 0 0 170px;color:var(--teal);font-size:.58rem;font-weight:800;letter-spacing:.28em}.hero-visual{min-height:408px;background-image:url('approved-option1-mockup.png');background-repeat:no-repeat;background-size:190.25% auto;background-position:100% 7.25%}.hero-visual:before,.hero-visual:after,.hero-mark,.visual-note{display:none}.button{min-height:42px;padding:0 20px;border-radius:7px;font-size:.86rem}.section{padding:10px 0 25px}.projects{gap:18px}.project{min-height:242px;padding:24px 28px;grid-template-columns:74px 1fr;gap:24px;background:linear-gradient(135deg,#eff6f6,#fff);border-color:#e1eaeb}.project.winter{background:linear-gradient(135deg,#f1f6f7,#fff)}.project-icon{display:grid;width:64px;height:64px;place-items:center;border-radius:13px;color:#fff;background:linear-gradient(145deg,#1d8e99,#075463);font-size:2.4rem}.project-icon.snow{font-size:2.2rem}.project h3{font-size:1.65rem;margin-bottom:6px}.project p{font-size:.88rem;line-height:1.42}.project-label{font-size:.6rem!important;letter-spacing:.28em;margin-bottom:9px!important}.button.small{min-height:38px;margin-top:4px;font-size:.76rem}.button.secondary{color:var(--teal);background:transparent;border-color:var(--teal)}.principles{padding:0 0 8px;background:#fff;border:0}.principle-heading{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:25px}.principle-heading span{height:1px;background:#a9c0c4}.principle-heading p{margin:0;color:var(--teal);font-size:.6rem;font-weight:850;letter-spacing:.3em;text-transform:uppercase}.principle-grid{grid-template-columns:repeat(4,1fr)}.principle,.principle:first-child,.principle:last-child{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:20px 24px;border:0;border-left:1px solid var(--line)}.principle:first-child{border-left:0}.line-icon{color:var(--teal);font-size:2rem;font-weight:400}.principle h3{font-size:.9rem;margin:0 0 5px}.principle p{font-size:.74rem;line-height:1.4}.about-wrap{margin-top:0;background:linear-gradient(90deg,#e9f3f4,#fff)}.about{grid-template-columns:.35fr 1.65fr;gap:34px;padding-top:34px;padding-bottom:34px}.about>div:first-child h2{font-size:2rem}.about-copy{padding-left:30px}.about-copy>p{display:none}.founder{grid-template-columns:110px 1fr;margin:0;padding:0;border:0}.monogram{width:96px;background:linear-gradient(145deg,#176b75,#9bc9cc);color:#fff}.founder h3{font-size:1.55rem}.founder p{font-size:.85rem;line-height:1.45}.support-grid{gap:18px}.support-card{padding:24px}.support-card h3{font-size:1.12rem}.support-card p{font-size:.86rem}.contact{padding:28px 36px;margin-bottom:25px}.contact h2{font-size:2rem}.footer-row{font-size:.76rem}
 @media(max-width:850px){.hero-visual{background-size:auto 620px;background-position:72% 6%}.hero-signoff{margin-left:0}.project{grid-template-columns:64px 1fr}.principle-grid{grid-template-columns:1fr 1fr}.principle:nth-child(3){border-left:0}.about{grid-template-columns:1fr}.about-copy{padding-left:0}.about>div:first-child h2{margin-bottom:12px}}
 @media(max-width:560px){.hero-visual{min-height:310px;background-size:auto 475px}.principle-grid{grid-template-columns:1fr}.principle,.principle:first-child,.principle:last-child{border-left:0;border-top:1px solid var(--line)}.project{grid-template-columns:1fr}.project-icon{width:58px;height:58px}.hero-signoff{display:none}}
+/* PHONE LAYOUT ONLY — desktop design above remains unchanged. */
+@media(max-width:850px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .shell{width:calc(100% - 32px)}
+  .header-row{min-height:72px;gap:10px}
+  .brand{min-width:0;gap:10px;font-size:1rem;white-space:nowrap}
+  .brand img{width:68px;flex:0 0 auto}
+  .brand span{overflow:hidden;text-overflow:ellipsis}
+  .nav,.tag{display:none}
+
+  .hero{display:flex;min-height:0;flex-direction:column;border-bottom:1px solid var(--line)}
+  .hero-visual{order:1;width:100%;min-height:260px;background-image:url('nfi-logo-option1.png'),linear-gradient(145deg,#c4e6e6 0%,#78bec1 48%,#0d626d 100%);background-repeat:no-repeat;background-position:center,center;background-size:min(72vw,390px) auto,cover}
+  .hero-copy{order:2;padding:38px 24px 42px}
+  .hero-copy h1{max-width:100%;margin-bottom:20px;font-size:clamp(2.75rem,12vw,4rem);line-height:.98}
+  .lede{max-width:100%;font-size:1rem;line-height:1.55}
+  .hero-signoff{margin:22px 0 0;font-size:.56rem;line-height:1.6}
+
+  .section{padding:28px 0}
+  .projects,.support-grid,.about{grid-template-columns:minmax(0,1fr)}
+  .projects,.support-grid{gap:16px}
+  .project{min-height:0;grid-template-columns:58px minmax(0,1fr);gap:17px;padding:22px 20px}
+  .project-icon{width:54px;height:54px;font-size:2rem}
+  .project-icon.snow{font-size:1.9rem}
+  .project h3{font-size:1.45rem}
+
+  .principle-heading{gap:14px}
+  .principle-grid{grid-template-columns:1fr 1fr}
+  .principle,.principle:first-child,.principle:last-child{grid-template-columns:36px minmax(0,1fr);gap:10px;padding:22px 16px;border:0;border-top:1px solid var(--line)}
+  .principle:nth-child(odd){border-right:1px solid var(--line)}
+
+  .about{gap:20px;padding:34px 0}
+  .about-copy{padding-left:0;border-left:0}
+  .about-copy>p{display:block}
+  .founder{grid-template-columns:82px minmax(0,1fr);gap:18px;margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+  .monogram{width:76px}
+
+  .section-head{display:block;margin-bottom:22px}
+  .section-head h2{margin-bottom:0}
+  .support-card{padding:24px 22px}
+  .contact{flex-direction:column;align-items:flex-start;gap:22px;margin-bottom:26px;padding:28px 24px}
+  .footer-row{flex-direction:column;align-items:flex-start;gap:12px}
+}
+@media(max-width:520px){
+  .shell{width:calc(100% - 24px)}
+  .brand img{width:62px}
+  .hero-visual{min-height:220px;background-size:min(78vw,330px) auto,cover}
+  .hero-copy{padding:34px 20px 38px}
+  .hero-copy h1{font-size:clamp(2.5rem,13vw,3.25rem)}
+  .hero-signoff{display:none}
+  .project{grid-template-columns:1fr}
+  .principle-grid{grid-template-columns:1fr}
+  .principle,.principle:first-child,.principle:last-child{border-right:0;border-top:1px solid var(--line)}
+  .principle:first-child{border-top:0}
+  .founder{grid-template-columns:1fr}
+  .contact .button{width:100%}
+}
 </style></head><body>
 <header class="site-header"><div class="shell header-row"><a class="brand" href="#top"><img src="nfi-logo-option1.png" alt=""><span>NorthForks Innovations</span></a><nav class="nav" aria-label="Main navigation"><a href="#projects">Projects</a><a href="#about">About</a><a href="#support">Support</a><a href="#contact">Contact</a></nav><div class="tag">Practical ideas<br>for real life.</div></div></header>
 <main id="top"><section class="hero"><div class="hero-copy"><p class="eyebrow">Solving everyday challenges</p><h1>Practical ideas.<br>Thoughtfully built.</h1><p class="lede">NorthForks Innovations builds practical digital tools and real-world solutions that make everyday life simpler, safer, and more intentional.</p><a class="button" href="#about">About&nbsp; →</a><p class="hero-signoff">IDEAS&nbsp; / &nbsp;TOOLS&nbsp; / &nbsp;A MORE PRACTICAL TOMORROW</p></div><div class="hero-visual" role="img" aria-label="NFI NorthForks Innovations architectural brand graphic"></div></section>
