@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NorthForks Innovations, LLC</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;width:100%;font-family:Arial,Helvetica,sans-serif}
+.page{position:relative;width:100%;line-height:0}
+.base{display:block;width:100%;height:auto}
+.overlay{position:absolute;z-index:5}
+/* Second Look: cover the old Learn More button and replace it with Google Play badge */
+.sl-cover{left:14.8%;top:78.0%;width:12.0%;height:6.8%;background:#eefaff;border-radius:5px}
+.playbadge{left:15.0%;top:77.2%;width:13.2%;height:auto;object-fit:contain;position:absolute;z-index:6}
+.fallback{background:#050505;color:#fff;border-radius:7px;padding:6px 12px;line-height:1;text-align:left}
+.fallback span{font-size:9px;display:block} .fallback strong{font-size:20px;display:block;margin-top:3px}
+/* Volt Scraper: cover old Learn More button and replace it with non-clicking Coming Soon */
+.vs-cover{left:61.8%;top:78.0%;width:11.0%;height:6.8%;background:#eefaff;border-radius:5px}
+.coming{left:61.9%;top:78.0%;width:10.5%;height:5.8%;display:flex;align-items:center;justify-content:center;
+background:#7388a6;color:#fff;border-radius:7px;font-weight:800;font-size:14px;line-height:1}
+/* Put approved S/lightning mark over the incorrect plain bolt in current screenshot */
+.smark{left:55.0%;top:66.1%;width:5.2%;height:11.0%;pointer-events:none}
+/* invisible navigation hotspots */
+.hot{position:absolute;z-index:10;display:block}
+</style>
+</head>
+<body>
+<main class="page">
+<img class="base" src="homepage-base.jpg" alt="NorthForks Innovations homepage">
+
+<div class="overlay sl-cover"></div>
+<div class="playbadge fallback"><span>GET IT ON</span><strong>Google Play</strong></div>
+
+<div class="overlay vs-cover"></div>
+<div class="overlay coming">COMING SOON</div>
+
+<!-- Blue S/lightning overlay for the approved Volt Scraper mark -->
+<svg class="overlay smark" viewBox="0 0 100 140" aria-hidden="true">
+  <path d="M72 0 L34 52 L58 52 L27 88 L49 88 L18 140 L83 71 L57 71 L88 30 L64 30 Z" fill="#137fe8"/>
+</svg>
+
+<a class="hot" aria-label="Projects" href="#projects" style="left:43%;top:2%;width:8%;height:6%"></a>
+<a class="hot" aria-label="About" href="mailto:tiramgamliel@gmail.com?subject=About%20NorthForks%20Innovations" style="left:51%;top:2%;width:7%;height:6%"></a>
+<a class="hot" aria-label="Support" href="mailto:tiramgamliel@gmail.com?subject=NorthForks%20Innovations%20Support" style="left:59%;top:2%;width:8%;height:6%"></a>
+<a class="hot" aria-label="Contact" href="mailto:tiramgamliel@gmail.com" style="left:68%;top:2%;width:8%;height:6%"></a>
+<span id="projects" style="position:absolute;left:0;top:58%"></span>
+</main>
+</body>
+</html>
