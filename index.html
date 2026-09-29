@@ -1,182 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-site-verification" content="Thd7Ay5Cyt2tpg57DNieLRD5wOYueE0yAwuBG7Hm_iA" />
-  <meta name="description" content="NorthForks Innovations, LLC builds practical digital tools and real-world solutions for everyday life." />
-  <meta name="theme-color" content="#063847" />
-  <title>NorthForks Innovations, LLC</title>
-  <style>
-    :root{
-      --ink:#073746; --ink2:#0d4f5e; --teal:#087688; --teal2:#0b93a3;
-      --rust:#b85424; --rust2:#cf6b2c; --muted:#4e6974; --paper:#fff;
-      --mist:#eef7f8; --line:#d8e7e9; --navy:#052b3b;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:#fff;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
-    a{color:inherit}
-    .shell{width:min(1440px,calc(100% - 56px));margin:auto}
-    header{height:92px;display:flex;align-items:center;justify-content:space-between;gap:32px;border-bottom:1px solid var(--line)}
-    .brand{display:flex;align-items:center;gap:17px;text-decoration:none;font-weight:850;font-size:1.08rem}
-    .brand img{width:78px;height:auto;display:block}
-    .brand span{color:var(--rust)}
-    nav{display:flex;align-items:center;gap:44px;font-weight:800}
-    nav a{text-decoration:none}
-    nav a:hover{color:var(--teal)}
-    .strap{padding-left:30px;border-left:1px solid #cbdcdf;font-size:.78rem;font-weight:850;letter-spacing:.18em;line-height:1.45;text-transform:uppercase}
-    .hero{display:grid;grid-template-columns:44% 56%;min-height:590px;border-bottom:1px solid var(--line)}
-    .hero-copy{padding:54px 64px 54px 0;display:flex;flex-direction:column;justify-content:center}
-    .eyebrow{margin:0 0 24px;color:var(--teal);font-size:.82rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase}
-    h1,h2,h3,p{margin-top:0}
-    h1{margin-bottom:26px;font-size:clamp(3.8rem,6.2vw,6.4rem);line-height:.91;letter-spacing:-.065em;font-weight:900}
-    .lead{max-width:610px;margin-bottom:32px;color:var(--muted);font-size:1.18rem}
-    .hero-actions{display:flex;align-items:center;gap:42px;flex-wrap:wrap}
-    .button{display:inline-flex;align-items:center;gap:14px;padding:15px 24px;border-radius:7px;background:var(--teal);color:#fff;font-weight:850;text-decoration:none}
-    .button:hover{background:var(--ink2)}
-    .micro{max-width:320px;font-size:.74rem;font-weight:900;letter-spacing:.2em;color:var(--teal);text-transform:uppercase}
-    .hero-art{position:relative;overflow:hidden;min-height:590px;background:
-      radial-gradient(circle at 78% 27%,rgba(255,204,125,.92) 0 2.5%,rgba(255,190,105,.32) 2.7% 10%,transparent 23%),
-      linear-gradient(180deg,#9bcbd9 0%,#d9e8e3 38%,#6d9e9a 39%,#376d6d 62%,#173f4c 100%)}
-    .sun-glow{position:absolute;inset:0;background:linear-gradient(112deg,transparent 44%,rgba(255,255,255,.28) 54%,transparent 68%)}
-    .mountain{position:absolute;left:-5%;right:-5%;bottom:0;height:47%;clip-path:polygon(0 73%,14% 48%,25% 63%,40% 24%,52% 58%,67% 35%,80% 64%,100% 36%,100% 100%,0 100%);background:linear-gradient(180deg,#315e66,#0b3443)}
-    .mountain.back{bottom:15%;height:40%;opacity:.35;transform:scaleX(1.08);background:#e4edf0}
-    .water{position:absolute;left:0;right:0;bottom:0;height:26%;background:linear-gradient(180deg,rgba(111,165,171,.9),#174c5a)}
-    .nfi-geo{position:absolute;inset:8% 8% 10% 8%;display:grid;grid-template-columns:1.05fr 1fr .28fr;gap:3.5%;align-items:center;z-index:3;filter:drop-shadow(0 14px 18px rgba(0,28,39,.16))}
-    .letter{height:72%;position:relative;border:2px solid rgba(255,255,255,.48);background:rgba(4,52,67,.36);backdrop-filter:blur(1px)}
-    .letter.n{clip-path:polygon(0 0,25% 0,75% 70%,75% 0,100% 0,100% 100%,75% 100%,25% 30%,25% 100%,0 100%)}
-    .letter.n::after{content:"";position:absolute;right:5%;top:0;width:29%;height:29%;background:rgba(184,84,36,.88);clip-path:polygon(0 0,100% 0,100% 100%)}
-    .letter.f{clip-path:polygon(0 0,100% 0,100% 23%,29% 23%,29% 42%,78% 42%,78% 64%,29% 64%,29% 100%,0 100%)}
-    .letter.i{clip-path:polygon(15% 0,85% 0,85% 100%,15% 100%)}
-    .hero-sidecopy{position:absolute;z-index:5;right:5%;bottom:11%;padding-left:25px;border-left:1px solid rgba(255,255,255,.7);color:#fff;font-size:.9rem;letter-spacing:.22em;line-height:1.75;text-transform:uppercase}
-    .hero-sidecopy::after{content:"";display:block;width:48px;height:3px;margin-top:17px;background:var(--rust2)}
-    .products{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
-    .product{position:relative;min-height:315px;overflow:hidden;padding:30px 38px;display:grid;grid-template-columns:52% 48%;align-items:center}
-    .product:first-child{border-right:1px solid var(--line);background:linear-gradient(135deg,#eefbff,#f4efff 70%,#fff)}
-    .product:last-child{background:linear-gradient(135deg,#f7fbfd,#eaf5fb)}
-    .product .eyebrow{margin-bottom:12px}
-    .product-logo{display:block;max-width:100%;max-height:205px;object-fit:contain}
-    .second-logo{width:100%;filter:drop-shadow(0 12px 16px rgba(42,111,145,.12))}
-    .volt-logo{width:92%;margin:auto}
-    .product-copy{padding-left:26px}
-    .product h2{margin-bottom:8px;font-size:1.65rem;line-height:1.1}
-    .product p{color:var(--muted)}
-    .text-link{display:inline-flex;gap:10px;color:var(--teal);font-weight:850;text-decoration:none}
-    .principles{padding:64px 0;background:linear-gradient(90deg,#062f43,#113d50 55%,#77452f);color:#fff}
-    .principle-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-    .principle{padding:8px 34px;border-right:1px solid rgba(255,255,255,.28)}
-    .principle:last-child{border-right:0}
-    .principle small{display:block;margin-bottom:8px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
-    .principle p{margin:0;color:rgba(255,255,255,.78)}
-    .section{padding:90px 0}
-    .section h2{font-size:clamp(2.4rem,4vw,4.2rem);letter-spacing:-.045em;line-height:1}
-    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
-    .about p{color:var(--muted);font-size:1.08rem}
-    .support-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:34px}
-    .support-card{padding:30px;border:1px solid var(--line);border-radius:16px;background:#f8fbfb}
-    footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
-    @media(max-width:900px){
-      .shell{width:min(100% - 30px,720px)}
-      header{height:auto;padding:18px 0;flex-wrap:wrap}.strap{display:none}nav{width:100%;gap:22px;justify-content:center}
-      .hero{grid-template-columns:1fr}.hero-copy{padding:55px 0 45px}.hero-art{min-height:420px}
-      .products{grid-template-columns:1fr}.product:first-child{border-right:0;border-bottom:1px solid var(--line)}
-      .principle-grid{grid-template-columns:1fr 1fr}.principle{margin:12px 0}
-      .about{grid-template-columns:1fr;gap:20px}
-    }
-    @media(max-width:600px){
-      .brand span{font-size:.92rem}.brand img{width:65px}nav{font-size:.9rem;gap:15px}
-      h1{font-size:3.65rem}.hero-art{min-height:340px}.hero-sidecopy{font-size:.68rem}
-      .product{grid-template-columns:1fr;padding:28px 24px}.product-logo{max-height:180px;margin:auto}.product-copy{padding:10px 0 0}
-      .principle-grid,.support-grid{grid-template-columns:1fr}.principle{border-right:0;border-bottom:1px solid rgba(255,255,255,.2)}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="google-site-verification" content="Thd7Ay5Cyt2tpg57DNieLRD5wOYueE0yAwuBG7Hm_iA">
+<title>NorthForks Innovations, LLC</title>
+<style>
+:root{--ink:#073746;--teal:#087b8d;--rust:#b65324;--muted:#506a75;--line:#dbe7e9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Arial,Helvetica,sans-serif;background:white}
+.wrap{width:min(1460px,calc(100% - 56px));margin:auto}
+header{height:72px;display:flex;align-items:center;gap:28px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:20px;text-decoration:none;font-weight:800;font-size:20px;white-space:nowrap}
+.brand img{width:96px;height:42px;object-fit:contain}.brand span{color:var(--rust)}
+nav{margin-left:auto;display:flex;gap:48px;font-weight:800}nav a{text-decoration:none;color:var(--ink)}
+.tag{margin-left:55px;padding-left:30px;border-left:1px solid #cbdcdf;font-size:12px;line-height:1.5;letter-spacing:.19em;font-weight:800}
+.hero{display:grid;grid-template-columns:40% 60%;min-height:518px}
+.hero-copy{padding:42px 42px 34px 10px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:13px;letter-spacing:.22em;font-weight:900;color:#057489;text-transform:uppercase;margin:0 0 22px}
+h1{font-size:72px;line-height:.92;letter-spacing:-4px;margin:0 0 22px;font-weight:900}
+.lead{font-size:18px;line-height:1.45;color:var(--muted);max-width:560px;margin-bottom:24px}
+.actions{display:flex;align-items:center;gap:44px}.btn{display:inline-block;background:var(--teal);color:white;padding:14px 28px;border-radius:7px;text-decoration:none;font-weight:800}
+.micro{font-size:12px;letter-spacing:.19em;line-height:1.35;font-weight:900;color:#057489}
+.hero-image{background:url("hero-approved.jpg") center center/cover no-repeat;min-height:518px}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:10px}
+.card{min-height:235px;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:grid;grid-template-columns:53% 47%;align-items:center;padding:24px 28px;background:linear-gradient(135deg,#f2fbfd,#f6f2ff)}
+.card.volt{background:linear-gradient(135deg,#f8fbfd,#eaf4fb)}
+.card img{width:100%;max-height:190px;object-fit:contain}.card-copy{padding-left:24px}.card h2{font-size:25px;margin:0 0 9px}.card p{margin:0 0 16px;color:var(--muted);line-height:1.4}
+.learn{display:inline-block;background:var(--teal);color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:800}
+.band{margin-top:10px;background:linear-gradient(100deg,#052f43,#163f50 55%,#8a4a2f);color:white;padding:28px 0}
+.bandgrid{display:grid;grid-template-columns:repeat(4,1fr)}.banditem{padding:0 30px;border-right:1px solid rgba(255,255,255,.28)}.banditem:last-child{border:0}.banditem b{display:block;letter-spacing:.17em;font-size:12px;margin-bottom:7px}.banditem span{font-size:14px;color:#e1eaed}
+section.info{padding:70px 0;border-bottom:1px solid var(--line)}section.info h2{font-size:42px;margin:0 0 18px}section.info p{font-size:18px;color:var(--muted);max-width:900px;line-height:1.55}
+footer{padding:28px 0;color:var(--muted);font-size:14px}
+@media(max-width:900px){.wrap{width:calc(100% - 30px)}header{height:auto;padding:16px 0;flex-wrap:wrap}.tag{display:none}nav{width:100%;justify-content:center;margin:0;gap:22px}.hero{grid-template-columns:1fr}.hero-copy{padding:50px 5px 35px}.hero-image{min-height:380px}h1{font-size:58px}.products{grid-template-columns:1fr}.bandgrid{grid-template-columns:1fr 1fr;gap:24px}}
+@media(max-width:560px){.brand span{font-size:16px}.brand img{width:78px}nav{font-size:14px;gap:14px}h1{font-size:48px}.hero-image{min-height:300px}.card{grid-template-columns:1fr}.card-copy{padding:10px 0 0}.bandgrid{grid-template-columns:1fr}.banditem{border:0}}
+</style>
 </head>
 <body>
-  <div class="shell">
-    <header>
-      <a class="brand" href="#top" aria-label="NorthForks Innovations home">
-        <img src="nfi-logo.png" alt="NFI" />
-        <span>NorthForks Innovations</span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="#projects">Projects</a><a href="#about">About</a><a href="#support">Support</a><a href="#contact">Contact</a>
-      </nav>
-      <div class="strap">Practical ideas<br>for real life.</div>
-    </header>
+<div class="wrap">
+<header>
+<a class="brand" href="#top"><img src="nfi-logo.jpg" alt="NFI"><span>NorthForks Innovations</span></a>
+<nav><a href="#projects">Projects</a><a href="#about">About</a><a href="#support">Support</a><a href="#contact">Contact</a></nav>
+<div class="tag">PRACTICAL IDEAS<br>FOR REAL LIFE.</div>
+</header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Solving everyday challenges</p>
-          <h1 id="hero-title">Practical<br>ideas.<br>Thoughtfully<br>built.</h1>
-          <p class="lead">NorthForks Innovations builds practical digital tools and real-world solutions that make everyday life simpler, safer, and more intentional.</p>
-          <div class="hero-actions">
-            <a class="button" href="#about">About <span>→</span></a>
-            <span class="micro">Ideas &nbsp;/&nbsp; Tools &nbsp;/&nbsp; A more practical tomorrow</span>
-          </div>
-        </div>
-        <div class="hero-art" aria-label="Geometric NFI mark layered over a peaceful northern landscape">
-          <div class="sun-glow"></div><div class="mountain back"></div><div class="water"></div><div class="mountain"></div>
-          <div class="nfi-geo" aria-hidden="true"><div class="letter n"></div><div class="letter f"></div><div class="letter i"></div></div>
-          <div class="hero-sidecopy">Practical<br>ideas<br>for<br>real life.</div>
-        </div>
-      </section>
+<main id="top">
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow">Solving everyday challenges</p>
+<h1>Practical<br>ideas.<br>Thoughtfully<br>built.</h1>
+<p class="lead">NorthForks Innovations builds practical digital tools and real-world solutions that make everyday life simpler, safer, and more intentional.</p>
+<div class="actions"><a class="btn" href="#about">About&nbsp; →</a><span class="micro">IDEAS&nbsp; / &nbsp;TOOLS&nbsp; / &nbsp;A MORE PRACTICAL<br>TOMORROW</span></div>
+</div>
+<div class="hero-image" role="img" aria-label="Geometric NFI mark layered over a peaceful mountain and lake landscape"></div>
+</section>
 
-      <section class="products" id="projects" aria-label="Featured projects">
-        <article class="product">
-          <div><p class="eyebrow">Current product</p><img class="product-logo second-logo" src="second-look-logo.png" alt="Second Look — Change Your Mind. Change Your Life." /></div>
-          <div class="product-copy">
-            <h2>Second Look</h2>
-            <p>A CBT-inspired reflection app designed to help people examine a difficult situation, consider another perspective, and choose a practical next step.</p>
-            <a class="text-link" href="https://tiramg.github.io/second-look-privacy/Second-Look-Privacy-Policy.html" target="_blank" rel="noopener">Privacy policy →</a>
-          </div>
-        </article>
-        <article class="product">
-          <div><p class="eyebrow">Winter project — in development</p><img class="product-logo volt-logo" src="volt-scraper-logo.png" alt="Volt Scraper — Built for Tougher Winters" /></div>
-          <div class="product-copy">
-            <h2>Built for tougher winters.</h2>
-            <p>A battery-powered driveway ice-scraper concept focused on making a familiar, physically demanding winter task more manageable.</p>
-            <span class="text-link">More as development progresses</span>
-          </div>
-        </article>
-      </section>
-    </main>
-  </div>
+<section class="products" id="projects">
+<article class="card">
+<div><p class="eyebrow">Featured product</p><img src="second-look-logo.png" alt="Second Look — Change Your Mind. Change Your Life."></div>
+<div class="card-copy"><h2>A new perspective.</h2><p>A CBT-inspired reflection tool designed to help people take another look at difficult thoughts and situations.</p><a class="learn" href="https://tiramg.github.io/second-look-privacy/Second-Look-Privacy-Policy.html" target="_blank" rel="noopener">Learn More&nbsp; →</a></div>
+</article>
+<article class="card volt">
+<div><p class="eyebrow">Featured project</p><img src="volt-scraper-logo.png" alt="Volt Scraper — Built for Tougher Winters"></div>
+<div class="card-copy"><h2>Built for tougher winters.</h2><p>A battery-powered driveway ice scraper in development to make a demanding winter task more manageable.</p><a class="learn" href="#contact">Learn More&nbsp; →</a></div>
+</article>
+</section>
+</main>
+</div>
 
-  <section class="principles">
-    <div class="shell principle-grid">
-      <div class="principle"><small>Ideas</small><p>Turning everyday challenges into thoughtful solutions.</p></div>
-      <div class="principle"><small>Products</small><p>Digital and physical tools built for real life.</p></div>
-      <div class="principle"><small>People</small><p>Human-centered design with a practical purpose.</p></div>
-      <div class="principle"><small>A brighter tomorrow</small><p>Useful innovations designed to make everyday life better.</p></div>
-    </div>
-  </section>
+<section class="band"><div class="wrap bandgrid">
+<div class="banditem"><b>IDEAS</b><span>Turning everyday challenges into smart solutions.</span></div>
+<div class="banditem"><b>PRODUCTS</b><span>Tools built for real life.</span></div>
+<div class="banditem"><b>PEOPLE</b><span>Innovation with purpose.</span></div>
+<div class="banditem"><b>A BRIGHTER TOMORROW</b><span>Practical solutions for stronger communities.</span></div>
+</div></section>
 
-  <div class="shell">
-    <section class="section about" id="about">
-      <div><p class="eyebrow">About NorthForks</p><h2>Different problems. One practical approach.</h2></div>
-      <div>
-        <p>NorthForks Innovations, LLC is an independent product-development company based in Grand Forks, North Dakota. We develop practical ideas across different areas—from digital tools that support reflection and learning to physical products intended to make everyday tasks easier.</p>
-        <p>Our projects may look very different from one another, but they begin in the same place: noticing a real problem and asking whether there is a clearer, more useful way to solve it.</p>
-      </div>
-    </section>
-
-    <section class="section" id="support">
-      <p class="eyebrow">Support</p><h2>Product support and information.</h2>
-      <div class="support-grid">
-        <article class="support-card"><h3>Second Look support</h3><p>Questions, feedback, or help related to the Second Look mobile application.</p><a class="text-link" href="mailto:tiramgamliel@gmail.com?subject=Second%20Look%20Support">Contact support →</a></article>
-        <article class="support-card"><h3>Second Look privacy</h3><p>Review information about how Second Look handles information and personal reflections.</p><a class="text-link" href="https://tiramg.github.io/second-look-privacy/Second-Look-Privacy-Policy.html" target="_blank" rel="noopener">Read privacy policy →</a></article>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <p class="eyebrow">Contact</p><h2>Have a question about NorthForks Innovations?</h2>
-      <p class="lead">For general inquiries, product questions, or collaboration opportunities, get in touch.</p>
-      <a class="button" href="mailto:tiramgamliel@gmail.com">Email us <span>→</span></a>
-    </section>
-
-    <footer>© 2026 NorthForks Innovations, LLC. All rights reserved.</footer>
-  </div>
+<div class="wrap">
+<section class="info" id="about"><p class="eyebrow">About NorthForks</p><h2>Different problems. One practical approach.</h2><p>NorthForks Innovations, LLC develops practical ideas across different areas—from digital tools that support reflection and learning to physical products intended to make everyday tasks easier.</p></section>
+<section class="info" id="support"><p class="eyebrow">Support</p><h2>Product support and information.</h2><p>For Second Look support, feedback, or questions about our projects, contact NorthForks Innovations.</p><a class="btn" href="mailto:tiramgamliel@gmail.com?subject=NorthForks%20Innovations%20Support">Contact Support</a></section>
+<section class="info" id="contact"><p class="eyebrow">Contact</p><h2>Have a question?</h2><p>For general inquiries, product questions, or collaboration opportunities, get in touch.</p><a class="btn" href="mailto:tiramgamliel@gmail.com">Email Us</a></section>
+<footer>© 2026 NorthForks Innovations, LLC. All rights reserved.</footer>
+</div>
 </body>
 </html>
