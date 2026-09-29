@@ -5,19 +5,30 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NorthForks Innovations, LLC</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;background:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff}
 .page{position:relative;width:100%;line-height:0}
-.page img{display:block;width:100%;height:auto}
-.hot{position:absolute;display:block;z-index:2}
+.base{display:block;width:100%;height:auto}
+.cover{position:absolute;left:18.9%;top:83.25%;width:8.7%;height:4.6%;
+       object-fit:cover;z-index:2}
+.play{position:absolute;left:19.0%;top:82.9%;width:8.2%;height:auto;z-index:3}
+.playlink{position:absolute;left:19.0%;top:82.9%;width:8.2%;height:5.0%;z-index:4}
 </style>
 </head>
 <body>
 <main class="page">
-<img src="homepage-approved-final.png" alt="NorthForks Innovations homepage">
-<a class="hot" aria-label="Get Second Look on Google Play"
-href="https://play.google.com/store/apps/details?id=com.cbflow.app"
-target="_blank" rel="noopener"
-style="left:16.1%;top:79.0%;width:8.0%;height:5.5%"></a>
+  <!-- THIS IS THE EXISTING LOCKED HOMEPAGE FILE ALREADY IN YOUR GITHUB -->
+  <img class="base" src="homepage-approved.png" alt="NorthForks Innovations homepage">
+
+  <!-- ONLY FIX: hide Second Look Learn More -->
+  <img class="cover" src="second-look-button-cover.jpg" alt="">
+
+  <!-- ONLY FIX: Google Play badge in its place -->
+  <img class="play" src="google-play-badge.png" alt="Get it on Google Play">
+  <a class="playlink"
+     href="https://play.google.com/store/apps/details?id=com.cbflow.app"
+     target="_blank" rel="noopener"
+     aria-label="Get Second Look on Google Play"></a>
 </main>
 </body>
 </html>
