@@ -69,3 +69,27 @@ img{display:block;max-width:100%}
   .product-card>img,
   .panel-link img{width:100%;height:auto;min-height:0;object-fit:contain}
 }
+
+/* Clickable hotspot over the About button baked into the approved hero artwork. */
+.hero{position:relative}
+.hero-about-link{
+  position:absolute;
+  left:5.2%;
+  top:39%;
+  width:10.5%;
+  height:18%;
+  z-index:5;
+  border-radius:10px;
+}
+.hero-about-link:focus-visible{
+  outline:3px solid #fff;
+  outline-offset:3px;
+}
+@media (max-width:900px){
+  .hero-about-link{
+    left:5.2%;
+    top:39%;
+    width:13%;
+    height:18%;
+  }
+}
